@@ -4,7 +4,6 @@ operation = 0
 choice = 0
 choice_1 = 0
 guess = 0
-#Just to test
 
 
 def create_q( operation, choice, choice_1, guess):
