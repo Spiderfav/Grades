@@ -3,7 +3,11 @@ score, operation, choice, choice_1, guess = 0, 0, 0, 0, 0
 
 print("Welcome to the quiz!")
 name = input("Enter Your Name: ")
-print("Hello,",name,", let's start the quiz!")
+print("Hello,",name,"!")
+print ("Now, what class are you in?")
+classs = input()
+print("Just to make sure, you are:",name,"and your class is:",classs)
+print("Let's start the quiz!")
 for x in range(9):
      choice = random.randint(0,10)
      choice_1 = random.randint(0,10)
@@ -57,3 +61,6 @@ for x in range(9):
 
 
 print("Your total for the test was:",score,"/10.")
+out_file = open(classs + name +".txt", "wt")
+out_file.write("Score:",str(score))
+out_file.close()
