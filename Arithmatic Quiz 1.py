@@ -8,6 +8,7 @@ print ("Now, what class are you in?")
 classs = input()
 print("Just to make sure, you are:",name,"and your class is:",classs)
 print("Let's start the quiz!")
+
 for x in range(9):
      choice = random.randint(0,10)
      choice_1 = random.randint(0,10)
