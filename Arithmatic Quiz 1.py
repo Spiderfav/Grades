@@ -74,4 +74,11 @@ print("Your total for the test was:",score,"/10.")
 
 out_file = open(classs.upper() +".txt", "a+")
 out_file.write(name.upper() + ":" + str(score)+ "\r\n")
+#out_file = sorted((str(False)))
 out_file.close()
+file = open(classs.upper() +".txt")
+lines = file.readlines()
+lines.sort()
+for line in lines:
+    file.write(line)
+file.close()
