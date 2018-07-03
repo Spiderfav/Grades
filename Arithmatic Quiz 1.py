@@ -13,7 +13,7 @@ print("Just to make sure, you are:",name,"and your class is:",classs)
 print("Let's start the quiz!")
 
 #Start a for loop to create the questions
-for x in range(9):
+for x in range(10):
     #Select a random number from one to ten
      choice = random.randint(0,10)
     #Select a random number from one to ten
@@ -72,6 +72,6 @@ for x in range(9):
 print("Your total for the test was:",score,"/10.")
 #Write score to a text file
 
-out_file = open(classs + name +".txt", "wt")
-out_file.write("Score:",str(score))
+out_file = open(classs.upper() +".txt", "a+")
+out_file.write(name.upper() + ":" + str(score)+ "\r\n")
 out_file.close()
