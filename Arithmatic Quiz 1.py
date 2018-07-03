@@ -11,6 +11,7 @@ classs = input()
 #Name and class is to be used later
 print("Just to make sure, you are:",name,"and your class is:",classs)
 print("Let's start the quiz!")
+
 #Start a for loop to create the questions
 for x in range(9):
     #Select a random number from one to ten
@@ -70,6 +71,7 @@ for x in range(9):
 #Print the score the user got
 print("Your total for the test was:",score,"/10.")
 #Write score to a text file
+
 out_file = open(classs + name +".txt", "wt")
 out_file.write("Score:",str(score))
 out_file.close()
