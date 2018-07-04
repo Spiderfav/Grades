@@ -1,5 +1,6 @@
 import random
 
+#Test for Jonas
 #Set all the variables
 score, operation, choice, choice_1, guess = 0, 0, 0, 0, 0
 
