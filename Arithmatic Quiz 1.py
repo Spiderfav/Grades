@@ -81,10 +81,10 @@ print(read_text)
 results = [read_text.split()]
 
 # sort the vowels
-results.sort()
+final = sorted(results) 
 
 # print vowels
-print(results)
+print(final)
 
 
 
