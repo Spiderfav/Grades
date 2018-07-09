@@ -1,6 +1,5 @@
 import random
 
-#Test for Jonas
 #Set all the variables
 score, operation, choice, choice_1, guess = 0, 0, 0, 0, 0
 
@@ -76,3 +75,19 @@ print("Your total for the test was:",score,"/10.")
 out_file = open(classs.upper() +".txt", "a+")
 out_file.write(name.upper() + ":" + str(score)+ "\r\n")
 out_file.close()
+in_file = open(classs.upper() +".txt")
+read_text = in_file.read()
+print(read_text)
+results = [read_text.split()]
+
+# sort the vowels
+results.sort()
+
+# print vowels
+print(results)
+
+
+
+
+
+
