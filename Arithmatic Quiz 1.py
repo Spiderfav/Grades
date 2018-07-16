@@ -77,17 +77,13 @@ out_file.write(name.upper() + ":" + str(score)+ "\r\n")
 out_file.close()
 in_file = open(classs.upper() +".txt")
 read_text = in_file.read()
-print(read_text)
-results = [read_text.split()]
+results = dict(read_text.split(None, 1) for line in classs.upper() +".txt" )
+print(results)
+
+
 
 # sort the vowels
-final = sorted(results) 
+#final = sorted(results)
 
 # print vowels
-print(final)
-
-
-
-
-
-
+#print(final)
