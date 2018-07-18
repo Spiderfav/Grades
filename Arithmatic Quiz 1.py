@@ -70,16 +70,27 @@ for x in range(10):
 
 #Print the score the user got
 print("Your total for the test was:",score,"/10.")
+
 #Write score to a text file
+Dictionary2 = {}
+
+Dictionary2.update({name.upper(): score})
+
+#print(Dictionary)
 
 out_file = open(classs.upper() +".txt", "a+")
-out_file.write(name.upper() + ":" + str(score)+ "\r\n")
+out_file.write( str(Dictionary2) )
 out_file.close()
-in_file = open(classs.upper() +".txt")
-read_text = in_file.read()
-results = dict(read_text.split(None, 1) for line in classs.upper() +".txt" )
-print(results)
 
+Dictionary = {}
+with open(classs.upper() +".txt") as f:
+    for l in f:
+          Dictionary[l[0]] = l[1]
+          print(Dictionary)
+
+#in_file = open(classs.upper() +".txt")
+#read_text = in_file.read()
+#print(read_text)
 
 
 # sort the vowels
