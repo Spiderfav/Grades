@@ -1,3 +1,4 @@
+import collections
 import random
 
 #Set all the variables
@@ -71,30 +72,54 @@ for x in range(10):
 #Print the score the user got
 print("Your total for the test was:",score,"/10.")
 
-#Write score to a text file
-Dictionary2 = {}
-
-Dictionary2.update({name.upper(): score})
-
-#print(Dictionary)
-
 out_file = open(classs.upper() +".txt", "a+")
-out_file.write( str(Dictionary2) )
+out_file.write( name.upper()+","+str(score))
 out_file.close()
 
-Dictionary = {}
-with open(classs.upper() +".txt") as f:
-    for l in f:
-          Dictionary[l[0]] = l[1]
-          print(Dictionary)
+print("Now the averages!")
+ClassA = open(classs.upper() +".txt", "r")
+ClassA = ClassA.read()
+items = ClassA.split(',')
+lenght = len(items)
+length = lenght-1
+ave_list = {}
 
-#in_file = open(classs.upper() +".txt")
-#read_text = in_file.read()
-#print(read_text)
+for i in range (0,length,2):
+     name = items[i]
+     score = int(items[i+i])
+     if name not in ave_list:
+          ave_list[name] = []
+     ave_list[name].append(score)
+     if len(ave_list[name]) >3:
+          ave_list[name].pop(0)
+
+print("Here are the averages:")
+print(ave_list)
+print("\n")
+
+averages = {}
+for i in range(0,length,2):
+     name = items[i]
+     score = int(items[i+1])
+     if name not in averages:
+          total = sum(ave_list[name])/len(ave_list[name])
+          total = round(total)
+          averages[name] = total
+
+sorted_ave = sorted(averages.items(), key = lambda x: x[1], reverse = True)
+print("And here is the sorted dictionary!")
+print(sorted_ave) 
+
+###Write score to a text file
+##Dictionary2 = {}
+##
+##Dictionary2.update({name.upper(): score})
+##
+##
+##Dictionary = {}
+##with open(classs.upper() +".txt") as f:
+##    for l in f:
+##          Dictionary[l[0]] = l[1]
+##          print(Dictionary)
 
 
-# sort the vowels
-#final = sorted(results)
-
-# print vowels
-#print(final)
