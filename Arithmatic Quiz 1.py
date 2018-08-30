@@ -73,11 +73,11 @@ for x in range(10):
 print("Your total for the test was:",score,"/10.")
 
 out_file = open(classs.upper() +".txt", "a+")
-out_file.write( name.upper()+","+str(score))
+out_file.write(str(score) + ":" + name.upper()+ "\r\n")
 out_file.close()
 
 print("Now the averages!")
-ClassA = open(classs.upper() +".txt", "r")
+ClassA = open("test.txt", "r")
 ClassA = ClassA.read()
 items = ClassA.split(',')
 lenght = len(items)
@@ -86,7 +86,7 @@ ave_list = {}
 
 for i in range (0,length,2):
      name = items[i]
-     score = int(items[i+i])
+     score = int(items[i+1])
      if name not in ave_list:
           ave_list[name] = []
      ave_list[name].append(score)
@@ -109,17 +109,5 @@ for i in range(0,length,2):
 sorted_ave = sorted(averages.items(), key = lambda x: x[1], reverse = True)
 print("And here is the sorted dictionary!")
 print(sorted_ave) 
-
-###Write score to a text file
-##Dictionary2 = {}
-##
-##Dictionary2.update({name.upper(): score})
-##
-##
-##Dictionary = {}
-##with open(classs.upper() +".txt") as f:
-##    for l in f:
-##          Dictionary[l[0]] = l[1]
-##          print(Dictionary)
 
 
