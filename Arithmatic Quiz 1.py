@@ -73,11 +73,11 @@ for x in range(10):
 print("Your total for the test was:",score,"/10.")
 
 out_file = open(classs.upper() +".txt", "a+")
-out_file.write(str(score) + ":" + name.upper()+ "\r\n")
+out_file.write( name.upper() + "," + str(score) + ",")
 out_file.close()
 
 print("Now the averages!")
-ClassA = open("test.txt", "r")
+ClassA = open(classs.upper() +".txt", "r")
 ClassA = ClassA.read()
 items = ClassA.split(',')
 lenght = len(items)
